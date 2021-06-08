@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function SearchEngine() {
+  // eslint-disable-next-line
   let [city, setCity] = useState("Bordeaux");
   function HandleSubmit(event) {
     event.preventDefault();
