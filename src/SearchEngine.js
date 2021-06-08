@@ -4,7 +4,6 @@ export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
   function HandleSubmit(event) {
     event.preventDefault();
-    return "hello";
   }
   function updateCity(event) {
     setCity(event.target.value);
