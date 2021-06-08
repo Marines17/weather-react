@@ -1,14 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World js</h1>{" "}
-      </header>
+      <div className="container">
+        <Heading />
+        <SearchEngine />
+      </div>
     </div>
   );
 }
+
 
 export default App;
