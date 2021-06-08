@@ -1,5 +1,7 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import Heading from "./Heading";
+import SearchEngine from "./SearchEngine";
+import "./styles.css";
 
 export default function App() {
   return (
@@ -11,6 +13,3 @@ export default function App() {
     </div>
   );
 }
-
-
-export default App;
