@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Time from "./Time";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -10,7 +11,6 @@ export default function SearchEngine() {
   let [icon, setIcon] = useState(null);
 
   function displayWeather(response) {
-    console.log(response);
     setTemp(Math.round(response.data.main.temp));
     setFeelslike(Math.round(response.data.main.feels_like));
     setHumidity(response.data.main.humidity);
@@ -37,7 +37,10 @@ export default function SearchEngine() {
             <div className="col-6">
               <strong id="city">{city}</strong>
               <br />
-              <span className="time">12:48</span>
+              <span className="time">
+                {" "}
+                <Time />
+              </span>
               <br />
               <span className="today">Thursday</span>
               <br />
@@ -101,7 +104,9 @@ export default function SearchEngine() {
             <div className="col-6">
               <strong id="city">Bordeaux</strong>
               <br />
-              <span className="time">12:48</span>
+              <span className="time">
+                <Time />
+              </span>
               <br />
               <span className="today">Thursday</span>
               <br />
