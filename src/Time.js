@@ -1,6 +1,15 @@
 import React from "react";
-import axios from "axios";
 
-export default function Time(props) {
-  return "12:45";
+export default function Time() {
+  let current = new Date();
+  let cDate =
+    current.getFullYear() +
+    "-" +
+    (current.getMonth() + 1) +
+    "-" +
+    current.getDate();
+  let cTime = current.getHours() + ":" + current.getMinutes();
+  let dateTime = cDate + " " + cTime;
+  console.log(dateTime);
+  return <div>{cTime}</div>;
 }
