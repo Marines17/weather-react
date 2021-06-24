@@ -11,5 +11,5 @@ export default function Time() {
   let cTime = current.getHours() + ":" + current.getMinutes();
   let dateTime = cDate + " " + cTime;
   console.log(dateTime);
-  return <div>{cTime}</div>;
+  return <span>{cTime}</span>;
 }
