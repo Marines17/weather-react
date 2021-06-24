@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Time from "./Time";
+import Forecast from "./Forecast";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -94,6 +95,7 @@ export default function SearchEngine() {
           <input className="search-form" type="submit" value="☀️" />
           <input className="submitPin" type="submit" value="📍" />
         </form>
+        <Forecast />
       </div>
     );
   } else {
