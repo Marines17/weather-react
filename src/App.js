@@ -8,6 +8,10 @@ export default function App() {
       <div className="container">
         <SearchEngine />
       </div>
+      <section>
+        <div id="forecast"></div>
+        <br />
+      </section>
     </div>
   );
 }

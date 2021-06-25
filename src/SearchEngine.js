@@ -96,7 +96,6 @@ export default function SearchEngine() {
             className="searchForm"
           />
           <input className="search-form" type="submit" value="☀️" />
-          <input className="submitPin" type="submit" value="📍" />
         </form>
         <Forecast value={city} />
       </div>
@@ -166,7 +165,6 @@ export default function SearchEngine() {
             className="searchForm"
           />
           <input className="search-form" type="submit" value="☀️" />
-          <input className="submitPin" type="submit" value="📍" />
         </form>
       </div>
     );
