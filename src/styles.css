@@ -26,6 +26,7 @@ h1 {
   color: #63836f;
   padding-top: 0;
   margin-top: 0;
+  text-transform: capitalize;
 }
 strong {
   font-size: 60px;
