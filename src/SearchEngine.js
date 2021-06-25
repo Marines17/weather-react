@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Time from "./Time";
 import Forecast from "./Forecast";
+import Day from "./Day";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -43,7 +44,9 @@ export default function SearchEngine() {
                 <Time />
               </span>
               <br />
-              <span className="today">Thursday</span>
+              <span className="today">
+                <Day />
+              </span>
               <br />
             </div>
             <div className="col-6 right-text">
@@ -95,7 +98,7 @@ export default function SearchEngine() {
           <input className="search-form" type="submit" value="☀️" />
           <input className="submitPin" type="submit" value="📍" />
         </form>
-        <Forecast value={updateCity} />
+        <Forecast value={city} />
       </div>
     );
   } else {
@@ -110,7 +113,10 @@ export default function SearchEngine() {
                 <Time />
               </span>
               <br />
-              <span className="today">Thursday</span>
+              <span className="today">
+                {" "}
+                <Day />
+              </span>
               <br />
             </div>
             <div className="col-6 right-text">
