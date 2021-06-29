@@ -1,5 +1,6 @@
 import React from "react";
 import SearchEngine from "./SearchEngine";
+import GitHub from "./GitHub";
 import "./styles.css";
 
 export default function App() {
@@ -7,11 +8,12 @@ export default function App() {
     <div className="App">
       <div className="container">
         <SearchEngine />
+        <section>
+          <div id="forecast"></div>
+          <br />
+        </section>
       </div>
-      <section>
-        <div id="forecast"></div>
-        <br />
-      </section>
+      <GitHub />
     </div>
   );
 }
