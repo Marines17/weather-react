@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Time from "./Time";
 import Day from "./Day";
+import Description from "./Description";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -69,19 +70,11 @@ export default function SearchEngine() {
                 </span>{" "}
               </span>
               <br />
-              <ul>
-                <li className="feelsLike" id="feelsLike">
-                  Feels like: {feelslike}℃
-                </li>
-                <br />
-                <li className="humidity" id="humidity">
-                  Humidity: {humidity}%
-                </li>
-                <br />
-                <li className="wind" id="wind">
-                  Wind: {wind}km/h
-                </li>
-              </ul>
+              <Description
+                wind={wind}
+                feelsLike={feelslike}
+                humidity={humidity}
+              />
             </div>
           </div>
         </h1>
