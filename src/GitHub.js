@@ -1,4 +1,5 @@
 import React from "react";
+import "./GitHub.css";
 
 export default function Github() {
   return (

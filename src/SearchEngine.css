@@ -1,0 +1,35 @@
+.today {
+  font-size: 45px;
+  color: #90b89f;
+}
+
+.time {
+  font-size: 40px;
+  color: rgb(243, 187, 3);
+}
+
+.bdxtemp {
+  color: #90b89f;
+  font-size: 70px;
+  font-weight: lighter;
+  text-align: center;
+  padding-right: 10%;
+}
+
+.bdxicon {
+  font-size: 70px;
+  color: rgb(243, 187, 3);
+  position: relative;
+}
+.searchForm,
+.search-form,
+.submitPin {
+  background-color: #ffffffec;
+  border-color: rgba(59, 136, 29, 0.3);
+  border-radius: 5px 5px 5px;
+}
+
+.search-form,
+.submitPin {
+  background-color: rgb(193, 223, 196);
+}

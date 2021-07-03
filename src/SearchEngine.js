@@ -3,6 +3,8 @@ import axios from "axios";
 import Time from "./Time";
 import Day from "./Day";
 import Description from "./Description";
+import UnitsConvert from "./UnitsConvert";
+import "./SearchEngine.css";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -57,17 +59,7 @@ export default function SearchEngine() {
                 />
               </span>
               <span className="bdxtemp">
-                <span id="temperature">{temp}</span>
-                <span className="celcius" id="convertCelcius">
-                  <a href="/" id="celcius-link" className="active">
-                    °C
-                  </a>
-                </span>
-                <span className="fahrenheit" id="convertFahrenheit">
-                  <a href="/" id="fahrenheit-link" className="active">
-                    /°F
-                  </a>
-                </span>{" "}
+                <UnitsConvert temperature={temp} />
               </span>
               <br />
               <Description

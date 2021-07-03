@@ -1,0 +1,12 @@
+.celcius,
+.fahrenheit {
+  position: relative;
+  font-size: 25px;
+  top: -32px;
+}
+
+.temp .celcius {
+  position: relative;
+  font-size: 10px;
+  top: -7px;
+}
