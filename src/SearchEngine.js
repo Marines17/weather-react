@@ -5,6 +5,7 @@ import Day from "./Day";
 import Description from "./Description";
 import UnitsConvert from "./UnitsConvert";
 import "./SearchEngine.css";
+import DailyForecast from "./DailyForecast";
 
 export default function SearchEngine() {
   let [city, setCity] = useState("Bordeaux");
@@ -81,6 +82,7 @@ export default function SearchEngine() {
           />
           <input className="search-form" type="submit" value="☀️" />
         </form>
+        <DailyForecast />
       </div>
     );
   } else {
