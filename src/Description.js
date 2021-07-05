@@ -5,7 +5,7 @@ export default function Description(props) {
     <div>
       <ul>
         <li className="feelsLike" id="feelsLike">
-          Feels like: {props.feelslike}℃
+          Feels like: {props.feelsLike}℃
         </li>
         <br />
         <li className="humidity" id="humidity">

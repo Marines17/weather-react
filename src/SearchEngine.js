@@ -12,6 +12,7 @@ export default function SearchEngine() {
   const [city, setCity] = useState("Bordeaux");
 
   function handleReasponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -22,6 +23,7 @@ export default function SearchEngine() {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
+      feelsLike: response.data.main.feels_like,
     });
   }
 
@@ -66,12 +68,14 @@ export default function SearchEngine() {
                 />
               </span>
               <span className="bdxtemp">
-                <UnitsConvert temperature={weatherData.temp} />
+                <UnitsConvert
+                  temperature={Math.round(weatherData.temperature)}
+                />
               </span>
               <br />
               <Description
-                wind={weatherData.wind}
-                feelsLike={weatherData.feelslike}
+                wind={Math.round(weatherData.wind)}
+                feelsLike={Math.round(weatherData.feelsLike)}
                 humidity={weatherData.humidity}
               />
             </div>
