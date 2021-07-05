@@ -11,7 +11,7 @@ export default function DailyForecastDay(props) {
 
   return (
     <div>
-      <div className="col">
+      <div>
         {day()} <br />
         <img
           className="forecastImg"
