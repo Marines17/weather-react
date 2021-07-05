@@ -8,39 +8,45 @@ import "./SearchEngine.css";
 import DailyForecast from "./DailyForecast";
 
 export default function SearchEngine() {
-  let [city, setCity] = useState("Bordeaux");
-  let [temp, setTemp] = useState(null);
-  let [feelslike, setFeelslike] = useState(null);
-  let [humidity, setHumidity] = useState(null);
-  let [wind, setWind] = useState(null);
-  let [icon, setIcon] = useState(null);
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState("Bordeaux");
 
-  function displayWeather(response) {
-    setTemp(Math.round(response.data.main.temp));
-    setFeelslike(Math.round(response.data.main.feels_like));
-    setHumidity(response.data.main.humidity);
-    setWind(Math.round(response.data.wind.speed));
-    setIcon(response.data.weather[0].icon);
+  function handleReasponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
   }
 
   function HandleSubmit(event) {
     event.preventDefault();
-    let apiKey = `66e48331c74ac5541e45dafb42039ad5`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(displayWeather);
+    Search();
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
 
-  if (temp) {
+  function Search() {
+    let apiKey = `66e48331c74ac5541e45dafb42039ad5`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleReasponse);
+  }
+
+  if (weatherData.ready) {
     return (
       <div>
         <h1>
           <div className="row">
             <div className="col-6">
-              <strong id="city">{city}</strong>
+              <strong id="city">{weatherData.city}</strong>
               <br />
               <span className="today">
                 <Day />
@@ -55,18 +61,18 @@ export default function SearchEngine() {
             <div className="col-6 right-text">
               <span className="bdxicon">
                 <img
-                  src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+                  src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`}
                   alt="Weather icon"
                 />
               </span>
               <span className="bdxtemp">
-                <UnitsConvert temperature={temp} />
+                <UnitsConvert temperature={weatherData.temp} />
               </span>
               <br />
               <Description
-                wind={wind}
-                feelsLike={feelslike}
-                humidity={humidity}
+                wind={weatherData.wind}
+                feelsLike={weatherData.feelslike}
+                humidity={weatherData.humidity}
               />
             </div>
           </div>
@@ -82,7 +88,7 @@ export default function SearchEngine() {
           />
           <input className="search-form" type="submit" value="☀️" />
         </form>
-        <DailyForecast />
+        <DailyForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
