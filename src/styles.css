@@ -83,3 +83,7 @@ footer {
   font-size: 20px;
   color: #90b89f;
 }
+
+@media (max-width: 576px) {
+  
+}
